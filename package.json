@@ -1,0 +1,26 @@
+{
+  "name": "fds17_hackathon",
+  "version": "1.0.0",
+  "description": "모멘텀 클론",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjub0217/fds17_hackathon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjub0217/fds17_hackathon/issues"
+  },
+  "homepage": "https://github.com/jjub0217/fds17_hackathon#readme",
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-html": "^6.1.0",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
