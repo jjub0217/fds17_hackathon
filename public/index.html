@@ -6,7 +6,6 @@
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
     <title>Document</title>
   </head>
-
   <body>
     <div class="wrap">
       <h1>
@@ -19,23 +18,24 @@
         </p>
       </h1>
       <ul class="user-menu">
-        <li></li>
+        <li class="todo-btn"></li>
         <li></li>
         <li></li>
       </ul>
-      <button class="login-page"></button>
+      <button class="login-page-enter-btn">로그인</button>
       <div class="login-wrap">
-        <span></span>
-        <input type="text" />
-        <span></span>
-        <input type="text" />
-        <button class="login-btn"></button>
+        <input class="login-id" type="text" placeholder="아이디" />
+        <input class="login-pw" type="password" placeholder="패스워드" />
+        <button class="login-btn">로그인</button>
       </div>
       <ul class="background">
         <li></li>
         <li></li>
         <li></li>
+        <li></li>
+        <li></li>
       </ul>
+      <span class="background-btn">배경 전환</span>
       <div class="todo-wrap">
         <h2>TODO LIST</h2>
         <form class="todo-form">
@@ -56,7 +56,6 @@
             <input type="checkbox" id="complete-all" />
             <label for="complete-all">Mark all as complete</label>
           </div>
-
           <div class="clear-complete">
             <strong class="active-todo">0 </strong>
             <span>items</span>
@@ -69,7 +68,7 @@
         <button class="close-btn">Close</button>
       </div>
     </div>
-
     <script src="./js/app.js"></script>
+    <script src="./js/todo.js"></script>
   </body>
 </html>
