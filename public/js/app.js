@@ -55,17 +55,16 @@ $loginPageEnterBtn.onclick = (e) => {
 };
 
 $loginBtn.onclick = (e) => {
-
-$loginCloseBtn.onclick = (e) => {
-  $showPage();
-};
-
-$loginForm.onclickt = (e) => {
- 
-
   if ($loginId.value && $loginPw.value) {
     alert("아이디 또는 비밀번호가 일치하지 않습니다. 다시 입력해주세요");
   } else {
     $showPage();
   }
+}
+
+
+$loginCloseBtn.onclick = () => {
+  $showPage();
 };
+
+
