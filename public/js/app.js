@@ -37,6 +37,7 @@ const $wrap = document.querySelector(".wrap");
 const $loginForm = document.querySelector(".login-form");
 const $loginId = document.querySelector(".login-id");
 const $loginPw = document.querySelector(".login-pw");
+const $loginCloseBtn = document.querySelector(".login-close-btn");
 // function
 const $showPage = () => {
   $loginwrap.classList.toggle("activeLogin");
@@ -44,9 +45,12 @@ const $showPage = () => {
 };
 // event handler
 $loginPageEnterBtn.onclick = (e) => {
-  console.log(1);
   $showPage();
 };
+$loginCloseBtn.onclick = (e) => {
+  $showPage();
+};
+
 $loginForm.onsubmit = (e) => {
   e.preventDefalut();
   if ($loginId.value && $loginPw.value) {
