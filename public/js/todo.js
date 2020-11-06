@@ -3,11 +3,11 @@ const $todoBtn = document.querySelector(".todo-btn");
 const $todoWrap = document.querySelector(".todo-wrap");
 const $closeBtn = document.querySelector(".close-btn");
 const $todos = document.querySelector(".todos");
-
+const $todoInput = document.querySelector(".todo-input");
+const $addBtn = document.querySelector(".add-btn");
 
 // states
 let todos = [];
-
 
 // 함수 정의
 const fetchTodos = () => {
@@ -31,10 +31,16 @@ const render = () => {
   $todos.innerHTML = html;
 };
 
+const getGenerateId = () => {
+  return todos.length ? Math.max(...todos.map((todo) => todo.id)) + 1 : 1;
+};
+
+const addTodo = (content) => {
+  todos = [{ id: getGenerateId(), content, completed: false }, ...todos];
+  render();
+};
+
 window.onload = fetchTodos;
-
-
-
 
 // 이벤트
 $todoBtn.onclick = () => {
@@ -43,4 +49,28 @@ $todoBtn.onclick = () => {
 
 $closeBtn.onclick = () => {
   $todoWrap.classList.remove("slide");
+};
+
+window.onkeyup = (e) => {
+  console.log(e);
+  if (e.key !== "Escape") return;
+  $todoWrap.classList.remove("slide");
+  $loginwrap.classList.remove("activeLogin");
+  $wrap.classList.remove("activeLogin");
+};
+
+$todoInput.onkeyup = (e) => {
+  if (e.key !== "Enter" || !$todoInput) return;
+  addTodo($todoInput.value);
+  render();
+  $todoInput.value = "";
+  $todoInput.focus();
+};
+
+$addBtn.onclick = (e) => {
+  if (!$todoInput.value) return;
+  addTodo($todoInput.value);
+  render();
+  $todoInput.value = "";
+  $todoInput.focus();
 };
