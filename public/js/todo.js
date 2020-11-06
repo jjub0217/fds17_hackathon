@@ -36,6 +36,8 @@ window.onload = fetchTodos;
 
 
 
+
+
 // 이벤트
 $todoBtn.onclick = () => {
   $todoWrap.classList.toggle("slide");
