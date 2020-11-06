@@ -65,7 +65,10 @@ const $wrap = document.querySelector(".wrap");
 const $loginForm = document.querySelector(".login-form");
 const $loginId = document.querySelector(".login-id");
 const $loginPw = document.querySelector(".login-pw");
+
 const $loginBtn = document.querySelector(".login-btn");
+const $loginBtn = document.querySelector(".login-btn");
+const $loginCloseBtn = document.querySelector(".login-close-btn");
 
 // function
 const $showPage = () => {
@@ -74,17 +77,24 @@ const $showPage = () => {
 };
 // event handler
 $loginPageEnterBtn.onclick = (e) => {
-  console.log(1);
   $showPage();
 };
+
 $loginBtn.onsclick = (e) => {
-  if ($loginId.value && $loginPw.value) {
-    alert("아이디 또는 비밀번호가 일치하지 않습니다. 다시 입력해주세요");
-  } else {
+  $loginBtn.onclick = (e) => {
+    if ($loginId.value && $loginPw.value) {
+      alert("아이디 또는 비밀번호가 일치하지 않습니다. 다시 입력해주세요");
+    } else {
+      $showPage();
+    }
+  };
+
+  const $loginCloseBtn = document.querySelector(".login-close-btn");
+  $loginCloseBtn.onclick = (e) => {
     $showPage();
-  }
+  };
 };
-const $loginCloseBtn = document.querySelector(".login-close-btn");
-$loginCloseBtn.onclick = (e) => {
+
+$loginCloseBtn.onclick = () => {
   $showPage();
 };
