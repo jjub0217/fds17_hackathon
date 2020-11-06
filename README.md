@@ -16,22 +16,21 @@
 ### 개발계획
 
 - 파일 디렉토리 분산화
-  - 전역 public 폴더 
-    
-    - 폴더 3개 
+  - 전역 json-server-exam folder
+  - 전역 public folder
+  
+    - 3 folder 
       - img
       - js
       - css
       
     -  index.html
-  
 - git 기능별 브랜치 기능별로 5개 생성 / 풀리퀘스트 방식
 - 컨벤션 합의
   - html , css : 케밥케이스
   - js : 카멜케이스
 
 1. 돔 트리 구조화
-2. 
 
 
 
