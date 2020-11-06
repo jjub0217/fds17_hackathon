@@ -46,8 +46,6 @@ const addTodo = (content) => {
 
 window.onload = fetchTodos;
 
-
-
 // 이벤트
 $todoBtn.onclick = () => {
   $todoWrap.classList.toggle("slide");
@@ -66,7 +64,7 @@ window.onkeyup = (e) => {
 };
 
 $todoInput.onkeyup = (e) => {
-  if (e.key !== "Enter" || !$todoInput) return;
+  if (e.key !== "Enter" || !$todoInput.value) return;
   addTodo($todoInput.value);
   render();
   $todoInput.value = "";
