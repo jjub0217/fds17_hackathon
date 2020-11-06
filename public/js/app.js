@@ -1,34 +1,3 @@
-// 로그인 창 구현
-
-// DOMs
-const $loginPageEnterBtn = document.querySelector(".login-page-enter-btn");
-const $loginwrap = document.querySelector(".login-wrap");
-const $wrap = document.querySelector(".wrap");
-const $loginForm = document.querySelector(".login-form");
-const $loginId = document.querySelector(".login-id");
-const $loginPw = document.querySelector(".login-pw");
-
-// function
-const $showPage = () => {
-  $loginwrap.classList.toggle("activeLogin");
-  $wrap.classList.toggle("activeLogin");
-};
-
-// event handler
-$loginPageEnterBtn.onclick = (e) => {
-  console.log(1);
-  $showPage();
-};
-
-$loginForm.onsubmit = (e) => {
-  e.preventDefalut();
-  if ($loginId.value && $loginPw.value) {
-    alert("아이디 또는 비밀번호가 일치하지 않습니다. 다시 입력해주세요");
-  } else {
-    $showPage();
-  }
-};
-
 const $timerHour = document.querySelector(".timer-hour");
 const $timerMin = document.querySelector(".timer-min");
 const $timerSecond = document.querySelector(".timer-second");
@@ -39,7 +8,6 @@ const $backgroundLi = $background.querySelectorAll("li");
 let imgNum = 1;
 let backgroundTimer;
 let isAnimating = false;
-
 const changeBackground = () => {
   if (isAnimating) return;
   const prev = imgNum;
@@ -56,10 +24,34 @@ const changeBackground = () => {
   backgroundTimer = setTimeout(changeBackground, 3000);
 };
 backgroundTimer = setTimeout(changeBackground, 3000);
-
 $backgroundBtn.onclick = () => {
   if (isAnimating) return;
   $backgroundBtn.classList.add("rolling");
   changeBackground();
 };
 backgroundTimer = setTimeout(changeBackground, 3000);
+// DOMs
+const $loginPageEnterBtn = document.querySelector(".login-page-enter-btn");
+const $loginwrap = document.querySelector(".login-wrap");
+const $wrap = document.querySelector(".wrap");
+const $loginForm = document.querySelector(".login-form");
+const $loginId = document.querySelector(".login-id");
+const $loginPw = document.querySelector(".login-pw");
+// function
+const $showPage = () => {
+  $loginwrap.classList.toggle("activeLogin");
+  $wrap.classList.toggle("activeLogin");
+};
+// event handler
+$loginPageEnterBtn.onclick = (e) => {
+  console.log(1);
+  $showPage();
+};
+$loginForm.onsubmit = (e) => {
+  e.preventDefalut();
+  if ($loginId.value && $loginPw.value) {
+    alert("아이디 또는 비밀번호가 일치하지 않습니다. 다시 입력해주세요");
+  } else {
+    $showPage();
+  }
+};
