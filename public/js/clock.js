@@ -3,6 +3,7 @@ const clock = () => {
   const $timerDay = document.querySelector(".timer-day");
   const $timerNow = document.querySelector(".timer-now");
   const $greeting = document.querySelector(".greeting");
+  const $userName = document.querySelector(".user-name");
 
   const today = new Date();
 
@@ -30,5 +31,22 @@ const clock = () => {
   $greeting.textContent = `${greetingText}`;
   setTimeout(clock, 1000);
 };
-
 clock();
+
+// 서버에서 리소스 요청
+const get = (url) => {
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", url);
+  xhr.send();
+
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      console.log(JSON.parse(xhr.response));
+    } else {
+      console.error("Error");
+    }
+  };
+};
+
+const url = " http://localhost:3000/users";
+console.log(get(users[2].userName));

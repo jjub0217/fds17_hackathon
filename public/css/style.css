@@ -33,21 +33,20 @@ body {
   position: absolute;
   left: 50%;
   top: 30%;
-  width: 500px;
+  width: 600px;
   height: 100px;
   text-align: center;
   transform: translate(-50%, 0);
-  font-size: 30px;
+  font-size: 50px;
   color: white;
 }
 .main-greeting > div:first-child {
   margin-bottom: 20px;
 }
 .timer-now {
-  font-weight: 700;
-  font-size: 60px;
+  font-weight: 600;
+  font-size: 100px;
 }
-
 .timer {
 }
 .timer > * {
@@ -104,11 +103,13 @@ body {
   background-color: #000;
 }
 .login-page-enter-btn {
-  background-color: #97add1;
-  border: 1px solid #97add1;
+  border: 1px solid rgb(228, 179, 115);
+  /* border: 2px; */
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
   border-radius: 3px;
   position: absolute;
-  color: #fff;
+  /* color: #fff; */
   top: 10px;
   right: 10px;
   padding: 5px;
@@ -117,27 +118,30 @@ body {
 }
 .login-wrap.activeLogin {
   opacity: 1;
+  width: 280px;
+  height: 300px;
 }
 .login-wrap {
   opacity: 0;
+  width: 0;
+  height: 0;
   position: relative;
   z-index: 100;
-  width: 230px;
-  height: 250px;
   margin: 5% auto;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background: #d6f0f6;
-  border-radius: 4px;
+  background: #fff;
+  border-radius: 20px;
 }
 .login-wrap > * {
-  width: 200px;
-  height: 30px;
-  border: 1px solid #e8e8eb;
-  border-radius: 3px;
+  width: 220px;
+  height: 40px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 5px;
   margin: 15px auto;
   padding: 3px;
 }
@@ -158,9 +162,11 @@ body {
 }
 .login-btn {
   color: white;
+  margin: 10px auto;
   font-weight: 700;
   border: 0px;
-  background-color: skyblue;
+  /* border: 2px solid rgb(228, 179, 115); */
+  background-color: rgb(228, 179, 115);
 }
 
 /* todo list 스타일 */
