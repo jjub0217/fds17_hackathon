@@ -13,7 +13,7 @@ const $loginPw = document.querySelector('.login-pw');
 const $showPage = () =>{
   $loginwrap.classList.toggle("active");
   $wrap.classList.toggle("active");
-}
+};
 
 
 // event handler
