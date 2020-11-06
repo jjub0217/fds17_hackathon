@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
   box-sizing: border-box;
-}
-
-  padding: 0;
+padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 @import url("./reset.css");
@@ -12,6 +11,7 @@
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
+  overflow: hidden;
 }
 h1 {
   position: absolute;
@@ -122,14 +122,21 @@ h1 {
 .todo-wrap {
   background-color: aquamarine;
   border: 3px solid black;
-  position: relative;
-  width: 40%;
-  height: 500px;
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  transform: translate(100%, 0);
+  transition: all 0.5s;
 }
 .todo-wrap > h2 {
   width: 80px;
   background-color: violet;
   margin: 0 auto;
+}
+.todo-wrap.slide {
+  transform: translate(0);
 }
 
 .todo-form {
@@ -202,7 +209,6 @@ h1 {
 }
 .completed-todo {
 }
-
 
 .background {
   position: absolute;
@@ -285,4 +291,6 @@ h1 {
   padding: 4px 10px;
   top: 5px;
   right: 5px;
+  cursor: pointer;
 }
+
