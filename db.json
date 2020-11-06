@@ -1,20 +1,20 @@
 {
-  "todos": [
+  "users": [
     {
-      "id": "PSE",
-      "name": "Sang Eon"
+      "id": 1,
+      "userName": "Sang Eon"
     },
     {
-      "id": "CJY",
-      "name": "Jae YEON "
+      "id": 2,
+      "userName": "Jae Yeon "
     },
     {
-      "id": "CYA",
-      "name": "Yun A"
+      "id": 3,
+      "userName": "Yun Ah"
     },
     {
-      "id": "KJH",
-      "name": "Joo Hyun"
+      "id": 4,
+      "userName": "Joo Hyun"
     }
   ]
 }
