@@ -35,15 +35,17 @@ const fetchTodos = () => {
   ];
   render();
 };
-
+ 
 const render = () => {
+  
   let tabMoveTodos = [...todos];
-
+  // console.log(tabMoveTodos);// 기존 배열
   const targetId = $nav.querySelector('.active').id;
+  console.log(targetId); all 
 
  if(targetId === 'completed'){
    tabMoveTodos = todos.filter(todo => todo.completed)
-  }else if(targetId === 'completed')
+  }else if(targetId === 'active')
   {
     tabMoveTodos = todos.filter(todo => !todo.completed)
   }

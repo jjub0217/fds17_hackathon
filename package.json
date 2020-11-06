@@ -1,9 +1,22 @@
 {
-  "name": "json-server-exam",
+  "name": "fds17_hackathon",
   "version": "1.0.0",
+  "description": "모멘텀 클론",
+  "main": ".eslintrc.js",
   "scripts": {
     "start": "json-server --watch db.json"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjub0217/fds17_hackathon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjub0217/fds17_hackathon/issues"
+  },
+  "homepage": "https://github.com/jjub0217/fds17_hackathon#readme",
   "devDependencies": {
     "json-server": "^0.16.2"
   }
