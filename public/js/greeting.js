@@ -1,1 +1,0 @@
-const $greetingWord = document.querySelector(".greeting-word");
