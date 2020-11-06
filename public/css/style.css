@@ -26,16 +26,30 @@ h1 {
   transform: translate(-50%, 0);
 }
 .user-menu li {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   display: inline-block;
-  margin-right: 20px;
-  background-color: red;
+  margin-right: 50px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.user-menu li.todo-btn {
+  background-image: url(/public/assets/todo.png);
+}
+.user-menu li.youtube {
+  background-image: url(/public/assets/youtube.png);
+}
+.user-menu li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
 .user-menu li:last-child {
   margin: 0;
+  background-image: url(/public/assets/weather.png);
 }
-wrap.activeLogin::after {
+.wrap.activeLogin::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -43,11 +57,10 @@ wrap.activeLogin::after {
   top: 0;
   opacity: 0.5;
   background-color: #000;
-  z-index: -1;
 }
 .login-page-enter-btn {
-  background-color: #97ADD1;
-  border: 1px solid #97ADD1;
+  background-color: #97add1;
+  border: 1px solid #97add1;
   border-radius: 3px;
   position: absolute;
   color: #fff;
@@ -69,16 +82,27 @@ wrap.activeLogin::after {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background: #D6F0F6;
+  background: #d6f0f6;
   border-radius: 4px;
 }
 .login-wrap > * {
   width: 200px;
   height: 30px;
-  border: 1px solid #E8E8EB;
+  border: 1px solid #e8e8eb;
   border-radius: 3px;
   margin: 15px auto;
   padding: 3px;
+}
+.login-close-btn {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: 10px;
+  top: 2px;
+  text-indent: -9999px;
+  overflow: hidden;
+  background-image: url(/public/assets/close.png);
+  background-size: 100%;
 }
 .login-wrap > input::placeholder {
   color: grey;
@@ -111,6 +135,8 @@ wrap.activeLogin::after {
 .login-page {
 }
 .login-wrap {
+}
+.todo-btn {
 }
 .todo-wrap {
   background-color: aquamarine;
