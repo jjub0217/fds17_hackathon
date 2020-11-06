@@ -39,25 +39,34 @@
       <div class="todo-wrap">
         <h2>TODO LIST</h2>
         <form class="todo-form">
-          <input type="text" class="todo-input" />
-          <button>ADD</button>
+          <input type= "text" placeholder = "what needs to be done?" "text"
+          class="todo-input" />
+          <button class="add-btn">ADD</button>
         </form>
-        <ul></ul>
-        <footer>
+        <ul class="nav">
+          <li id="all" class="active">ALL</li>
+          <li id="active">ACITVE</li>
+          <li id="completed">COMPLETED</li>
+        </ul>
+        <ul class="todos">
+          일정 목록
+        </ul>
+        <footer class="footer">
           <div class="complete-all">
             <input type="checkbox" id="complete-all" />
             <label for="complete-all">Mark all as complete</label>
           </div>
+
           <div class="clear-complete">
             <strong class="active-todo">0 </strong>
             <span>items</span>
-
             <button>
               <span>Clear Complete</span>
               <span class="completed-todo">0</span>
             </button>
           </div>
         </footer>
+        <button class="close-btn">Close</button>
       </div>
     </div>
 
