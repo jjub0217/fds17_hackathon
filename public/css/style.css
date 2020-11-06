@@ -168,6 +168,7 @@ body {
 }
 .todo-wrap {
   margin-top: 130px;
+  margin-right: 15px;
   border-radius: 20px;
   /* background-color: #d6f0f6; */
   /* border: 3px solid black; */
@@ -176,7 +177,7 @@ body {
   height: 60%;
   top: 0;
   right: 0;
-  padding: 30px;
+  padding: 40px;
   transform: translate(100%, 0);
   transition: all 0.5s;
 }
@@ -263,12 +264,14 @@ body {
 .complete-all {
   position: absolute;
   padding-right: 20px;
+  bottom: 35px;
   vertical-align: middle;
   padding-top: 2px;
 }
 .clear-complete {
   position: absolute;
-  right: 40px;
+  right: 50px;
+  bottom: 30px;
 }
 .clear-complete > span {
   vertical-align: middle;
