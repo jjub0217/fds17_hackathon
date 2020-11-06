@@ -3,17 +3,11 @@ const $todoBtn = document.querySelector(".todo-btn");
 const $todoWrap = document.querySelector(".todo-wrap");
 const $closeBtn = document.querySelector(".close-btn");
 const $todos = document.querySelector(".todos");
+
+
 // states
 let todos = [];
 
-// 이벤트
-$todoBtn.onclick = () => {
-  $todoWrap.classList.toggle("slide");
-};
-
-$closeBtn.onclick = () => {
-  $todoWrap.classList.remove("slide");
-};
 
 // 함수 정의
 const fetchTodos = () => {
@@ -38,3 +32,15 @@ const render = () => {
 };
 
 window.onload = fetchTodos;
+
+
+
+
+// 이벤트
+$todoBtn.onclick = () => {
+  $todoWrap.classList.toggle("slide");
+};
+
+$closeBtn.onclick = () => {
+  $todoWrap.classList.remove("slide");
+};
