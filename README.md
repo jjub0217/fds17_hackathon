@@ -20,9 +20,9 @@
     
     - 폴더 3개 
       - img
-    - js
+      - js
       - css
-    
+      
     -  index.html
   
 - git 기능별 브랜치 기능별로 5개 생성 / 풀리퀘스트 방식
@@ -35,12 +35,4 @@
 
 
 
-```
-New Tab page that gives you a moment of calm and inspires you to be more productive. Get inspired with a daily photo and quote, set a daily focus, and track your to-dos. Eliminate distractions and beat procrastination with a reminder of your focus for the day on every new tab. Join over 3 million users and get inspired to create the life you want to live.
-```
 
-```
-New Tab page that gives you a moment of calm and inspires you to be more productive. Get inspired with a daily photo and quote, set a daily focus, and track your to-dos. Eliminate distractions and beat procrastination with a reminder of your focus for the day on every new tab. Join over 3 million users and get inspired to create the life you want to live.
-```
-
-New Tab page that gives you a moment of calm and inspires you to be more productive. Get inspired with a daily photo and quote, set a daily focus, and track your to-dos. Eliminate distractions and beat procrastination with a reminder of your focus for the day on every new tab. Join over 3 million users and get inspired to create the life you want to live.# fds17_hackathon
