@@ -78,10 +78,10 @@ body {
   background-position: center;
 }
 .user-menu li.todo-btn {
-  background-image: url(/public/assets/todo.png);
+  background-image: url('../assets/todo.png');
 }
 .user-menu li.youtube {
-  background-image: url(/public/assets/youtube.png);
+  background-image: url('../assets/youtube.png');
 }
 .user-menu li a {
   display: inline-block;
@@ -90,7 +90,7 @@ body {
 }
 .user-menu li:last-child {
   margin: 0;
-  background-image: url(/public/assets/weather.png);
+  background-image: url('../assets/weather.png');
 }
 
 /* login 스타일 */
@@ -149,7 +149,7 @@ body {
   top: 2px;
   text-indent: -9999px;
   overflow: hidden;
-  background-image: url(/public/assets/close.png);
+  background-image: url('../assets/close.png');
   background-size: 100%;
 }
 .login-wrap > input::placeholder {
@@ -319,23 +319,23 @@ body {
 }
 .background li:nth-child(1) {
   opacity: 1;
-  background-image: url(/public/assets/image1.jpg);
+  background-image: url('../assets/image1.jpg');
 }
 .background li:nth-child(2) {
   opacity: 0;
-  background-image: url(/public/assets/image2.jpg);
+  background-image: url('../assets/image2.jpg');
 }
 .background li:nth-child(3) {
   opacity: 0;
-  background-image: url(/public/assets/image3.jpg);
+  background-image: url('../assets/image3.jpg');
 }
 .background li:nth-child(4) {
   opacity: 0;
-  background-image: url(/public/assets/image4.jpg);
+  background-image: url('../assets/image4.jpg');
 }
 .background li:nth-child(5) {
   opacity: 0;
-  background-image: url(/public/assets/image5.jpg);
+  background-image: url('../assets/image5.jpg');
 }
 .background li.fade-out {
   animation: fade-out 2.5s;
@@ -348,7 +348,7 @@ body {
   overflow: hidden;
   width: 60px;
   height: 60px;
-  background-image: url(/public/assets/sun.png);
+  background-image: url('../assets/sun.png');
   background-size: 100%;
   background-position: center;
 }
