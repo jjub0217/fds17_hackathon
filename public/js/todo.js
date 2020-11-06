@@ -6,7 +6,9 @@ const $todos = document.querySelector(".todos");
 const $todoInput = document.querySelector(".todo-input");
 const $addBtn = document.querySelector(".add-btn");
 const $completeAllButton = document.querySelector(".complete-all");
-const $clearCompleteButton = document.querySelector('clear-complete-btn');
+const $clearCompleteButton = document.querySelector(".clear-complete");
+const $activeTodosNumber = document.querySelector(".active-todo");
+const $completedNumber = document.querySelector(".completed-todo");
 
 
 // states
@@ -33,6 +35,10 @@ const render = () => {
     </li>`
   });
   $todos.innerHTML = html;
+
+  $completedNumber.textContent = todos.filter(todo => todo.completed).length;
+  $activeTodosNumber.textContent = todos.filter(todo => !todo.completed).length;
+
 };
 
 const getGenerateId = () => {
@@ -86,6 +92,15 @@ $addBtn.onclick = (e) => {
 
 
 // todo 
+const toggleCompleted = (id) => {
+  todos = todos.map( todo => todo.id === +id ? ({...todo, completed: !(todo.completed) }) : todo )
+}
+
+$todos.onchange = (e) => {
+  toggleCompleted(e.target.parentNode.id)
+  render();
+}
+
 
 // todo의 x 버튼 누르면 li 삭제하기
 const removeTodo = (id) => {
@@ -115,7 +130,7 @@ $completeAllButton.onchange = e => {
 // clear-completed 버튼 누르면, 체크박스 체크 되어있는 li 삭제하기
 
 const clearComplete = () => {
-  todos = todos.filter(todo => !todo.completed)
+  todos = todos.filter(todo => !todo.completed);
 }
 
 $clearCompleteButton.onclick = e => {
