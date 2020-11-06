@@ -5,17 +5,17 @@ const $wrap = document.querySelector(".wrap");
 const $loginForm = document.querySelector(".login-form");
 const $loginId = document.querySelector(".login-id");
 const $loginPw = document.querySelector(".login-pw");
-
 const $loginBtn = document.querySelector(".login-btn");
-
-
 const $loginCloseBtn = document.querySelector(".login-close-btn");
 
 // function
 const $showPage = () => {
   $loginwrap.classList.toggle("activeLogin");
   $wrap.classList.toggle("activeLogin");
+  $loginId.value = "";
+  $loginPw.value = "";
 };
+
 // event handler
 $loginPageEnterBtn.onclick = (e) => {
   $showPage();
@@ -27,10 +27,8 @@ $loginBtn.onclick = (e) => {
   } else {
     $showPage();
   }
-}
-
+};
 
 $loginCloseBtn.onclick = () => {
   $showPage();
 };
-

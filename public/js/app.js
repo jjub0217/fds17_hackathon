@@ -1,7 +1,34 @@
-const $timerHour = document.querySelector(".timer-hour");
-const $timerMin = document.querySelector(".timer-min");
-const $timerSecond = document.querySelector(".timer-second");
-const $greetingWord = document.querySelector(".greeting-word");
+// clock 구현
+const $timerDay = document.querySelector(".timer-day");
+const $timerNow = document.querySelector(".timer-now");
+const $greeting = document.querySelector(".greeting");
+
+const today = new Date();
+
+const year = today.getFullYear();
+const month = today.getMonth() + 1;
+const date = today.getDay();
+let hour = today.getHours();
+let minute = today.getMinutes();
+let second = today.getSeconds();
+
+$timerDay.textContent = `${year}년 ${month}월 ${date}일`;
+$timerNow.textContent = `${hour < 10 ? "0" + hour : hour} : ${
+  minute < 10 ? "0" + minute : minute
+} : ${second < 10 ? "0" + second : second}`;
+
+const greetingText =
+  hour > 6 && hour < 12
+    ? "Good Morning"
+    : hour > 12 && hour < 18
+    ? "Good Afternoon"
+    : hour > 18 && hour < 21
+    ? "Good Evening"
+    : "Good Night";
+
+$greeting.textContent = `${greetingText}`;
+
+// 배경이미지 전환
 const $background = document.querySelector(".background");
 const $backgroundBtn = document.querySelector(".background-btn");
 const $backgroundLi = $background.querySelectorAll("li");
@@ -31,7 +58,7 @@ $backgroundBtn.onclick = () => {
 };
 backgroundTimer = setTimeout(changeBackground, 3000);
 
-// DOMs
+// DOMs 로그인창
 const $loginPageEnterBtn = document.querySelector(".login-page-enter-btn");
 const $loginwrap = document.querySelector(".login-wrap");
 const $wrap = document.querySelector(".wrap");
@@ -40,8 +67,7 @@ const $loginId = document.querySelector(".login-id");
 const $loginPw = document.querySelector(".login-pw");
 
 const $loginBtn = document.querySelector(".login-btn");
-
-
+const $loginBtn = document.querySelector(".login-btn");
 const $loginCloseBtn = document.querySelector(".login-close-btn");
 
 // function
@@ -54,17 +80,21 @@ $loginPageEnterBtn.onclick = (e) => {
   $showPage();
 };
 
-$loginBtn.onclick = (e) => {
-  if ($loginId.value && $loginPw.value) {
-    alert("아이디 또는 비밀번호가 일치하지 않습니다. 다시 입력해주세요");
-  } else {
-    $showPage();
-  }
-}
+$loginBtn.onsclick = (e) => {
+  $loginBtn.onclick = (e) => {
+    if ($loginId.value && $loginPw.value) {
+      alert("아이디 또는 비밀번호가 일치하지 않습니다. 다시 입력해주세요");
+    } else {
+      $showPage();
+    }
+  };
 
+  const $loginCloseBtn = document.querySelector(".login-close-btn");
+  $loginCloseBtn.onclick = (e) => {
+    $showPage();
+  };
+};
 
 $loginCloseBtn.onclick = () => {
   $showPage();
 };
-
-

@@ -11,19 +11,45 @@ body {
   margin: 0;
   overflow: hidden;
 }
-h1 {
+
+/* 시계 스타일 */
+.main-greeting {
   position: absolute;
   left: 50%;
   top: 30%;
   width: 500px;
   height: 100px;
+  text-align: center;
   transform: translate(-50%, 0);
-  background-color: red;
+  font-size: 30px;
+  color: white;
 }
+.main-greeting > div:first-child {
+  margin-bottom: 20px;
+}
+.timer-now {
+  font-weight: 700;
+  font-size: 60px;
+}
+
+.timer {
+}
+.timer > * {
+  display: block;
+  text-shadow: 2px 2px 3px black;
+}
+.greeting {
+  font-size: 50px;
+  font-weight: 600;
+}
+.name {
+}
+
+/* user menu 스타일 */
 .user-menu {
   position: absolute;
   left: 50%;
-  bottom: 100px;
+  bottom: 10%;
   transform: translate(-50%, 0);
 }
 .user-menu li {
@@ -50,6 +76,8 @@ h1 {
   margin: 0;
   background-image: url(/public/assets/weather.png);
 }
+
+/* login 스타일 */
 .wrap.activeLogin::after {
   position: absolute;
   content: "";
@@ -67,6 +95,9 @@ h1 {
   color: #fff;
   top: 10px;
   right: 10px;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 700;
 }
 .login-wrap.activeLogin {
   opacity: 1;
@@ -109,34 +140,14 @@ h1 {
   color: grey;
   text-align: center;
 }
-.login-id {
-}
-.login-pw {
-}
 .login-btn {
   color: white;
   font-weight: 700;
   border: 0px;
   background-color: skyblue;
 }
-.wrap {
-}
-.timer {
-}
-.timer-hour {
-}
-.timer-min {
-}
-.greeting {
-}
-.name {
-}
-.user-menu {
-}
-.login-page {
-}
-.login-wrap {
-}
+
+/* todo list 스타일 */
 .todo-btn {
 }
 .todo-wrap {
@@ -235,6 +246,8 @@ h1 {
   right: 5px;
   cursor: pointer;
 }
+
+/* background image 스타일 */
 .background {
   position: absolute;
   width: 100%;
