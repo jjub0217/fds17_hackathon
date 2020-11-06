@@ -7,6 +7,7 @@ const $todoInput = document.querySelector(".todo-input");
 const $addBtn = document.querySelector(".add-btn");
 const $completeAllButton = document.querySelector(".complete-all");
 const $clearCompleteButton = document.querySelector(".clear-complete");
+const $nav = document.querySelector('.nav');
 const $activeTodosNumber = document.querySelector(".active-todo");
 const $completedNumber = document.querySelector(".completed-todo");
 
@@ -16,17 +17,39 @@ let todos = [];
 
 // 함수 정의
 const fetchTodos = () => {
-  todos = [
-    { id: 1, content: "HTML", completed: false },
-    { id: 2, content: "CSS", completed: false },
-    { id: 3, content: "Javascript", completed: false }
+  todos = [{
+      id: 1,
+      content: "HTML",
+      completed: false
+    },
+    {
+      id: 2,
+      content: "CSS",
+      completed: false
+    },
+    {
+      id: 3,
+      content: "Javascript",
+      completed: false
+    }
   ];
   render();
 };
 
 const render = () => {
+  let tabMoveTodos = [...todos];
+
+  const targetId = $nav.querySelector('.active').id;
+
+ if(targetId === 'completed'){
+   tabMoveTodos = todos.filter(todo => todo.completed)
+  }else if(targetId === 'completed')
+  {
+    tabMoveTodos = todos.filter(todo => !todo.completed)
+  }
+
   let html = "";
-  todos.forEach(todo => {
+  tabMoveTodos.forEach(todo => {
     html += `<li id="${todo.id}" class="todo-item">
       <input id="ck-${todo.id}" class="checkbox" type="checkbox"
       ${todo.completed ? 'checked' : ""}>
@@ -46,7 +69,11 @@ const getGenerateId = () => {
 };
 
 const addTodo = (content) => {
-  todos = [{ id: getGenerateId(), content, completed: false }, ...todos];
+  todos = [{
+    id: getGenerateId(),
+    content,
+    completed: false
+  }, ...todos];
   render();
 };
 
@@ -91,7 +118,10 @@ $addBtn.onclick = (e) => {
 
 // todo 
 const toggleCompleted = (id) => {
-  todos = todos.map( todo => todo.id === +id ? ({...todo, completed: !(todo.completed) }) : todo )
+  todos = todos.map(todo => todo.id === +id ? ({
+    ...todo,
+    completed: !(todo.completed)
+  }) : todo)
 }
 
 $todos.onchange = (e) => {
@@ -102,21 +132,24 @@ $todos.onchange = (e) => {
 
 // todo의 x 버튼 누르면 li 삭제하기
 const removeTodo = (id) => {
-todos = todos.filter(todo => todo.id !== +id);
+  todos = todos.filter(todo => todo.id !== +id);
 }
 
 $todos.onclick = e => {
   if (!e.target.matches('.todos > li > i')) return;
   console.log(e.target); // i
   console.log(e.target.parentNode.id); // 세변째 li 클릭하면: 3 
-  removeTodo(e.target.parentNode.id);  
+  removeTodo(e.target.parentNode.id);
 
-  render(); 
+  render();
 }
 
 // 전체 체크, 전체 해제 하기
 const completeAll = (checked) => {
-  todos = todos.map(todo => ({...todo, completed: checked}))
+  todos = todos.map(todo => ({
+    ...todo,
+    completed: checked
+  }))
 }
 
 $completeAllButton.onchange = e => {
@@ -126,13 +159,34 @@ $completeAllButton.onchange = e => {
 
 
 // clear-completed 버튼 누르면, 체크박스 체크 되어있는 li 삭제하기
-
 const clearComplete = () => {
   todos = todos.filter(todo => !todo.completed);
 }
 
 $clearCompleteButton.onclick = e => {
-  if(!e.target.matches('.clear-complete > button')) return;
+  if (!e.target.matches('.clear-complete > button')) return;
   clearComplete();
+
+  render();
+}
+
+// checked가 true 인 li에만 돌아가면서 Active 클래스를 달기
+const tabMove = (target) => {
+  // console.log($nav); // $nav 의 li들
+  // console.log(Array.isArray($nav)); // false
+  // console.log($nav.children); // HTMLCollection (3) <- 유사배열 객체
+  [...$nav.children].forEach($navItem => {
+    if ($navItem === target) {
+      target.classList.add('active');
+    } else {
+      $navItem.classList.remove('active');
+    }
+  })
+}
+
+
+$nav.onclick = e => {
+  if (!e.target.matches('.nav > li')) return;
+  tabMove(e.target); // Active를 선택하면 id가 Active인 li
   render();
 }
