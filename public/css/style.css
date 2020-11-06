@@ -63,6 +63,7 @@ h1 {
 }
 .login-wrap.activeLogin {
   opacity: 1;
+  
 }
 .login-wrap{
   opacity: 0;
